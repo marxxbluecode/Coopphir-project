@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Coopphir | Dúvidas</title>
+    <link rel="icon" href="images/icon.png" type="image/gif">
+    <link rel="stylesheet" href="./css/Duvidastyle.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <a href="http://127.0.0.1:5500/Home.html">
+          <img class="icon" src="images/logo.png" alt="">
+        </a>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Procurar...">
+         <span class="tooltip">Procurar</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Minha conta</span>
+       </a>
+       <span class="tooltip">Minha conta</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Mensagens</span>
+       </a>
+       <span class="tooltip">Mensagens</span>
+     </li>
+     <li>
+       <a href="http://127.0.0.1:5500/Carrinho.html">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Carrinho</span>
+       </a>
+       <span class="tooltip">Carrinho</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Lista de desejos</span>
+       </a>
+       <span class="tooltip">Lista de desejos</span>
+     </li>
+     <li>
+        <a href="http://127.0.0.1:5500/Duvidas.html">
+          <i class='bx bx-question-mark'></i>
+          <span class="links_name">Dúvidas</span>
+        </a>
+        <span class="tooltip">Dúvidas</span>
+      </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="images/perfil.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Nome Usuário</div>
+             <div class="type">Comprador</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+    <section class="home-section">
+
+        <div lass="header" >
+            <img class="logo" src="./images/logo.png" alt="logo"/> 
+            <h2 class="h2">Buscando o melhor para você!</h2>
+        </div>
+
+    <div class="Text">
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque esse architecto natus aliquam sunt incidunt, doloribus vero sed autem ipsum rerum nobis nisi a quae neque mollitia. Eveniet, quibusdam hic. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quo maxime soluta magni reiciendis maiores recusandae. Ipsum doloribus sequi sint non doloremque cupiditate iusto. Porro tempore inventore minima maxime possimus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit placeat quibusdam ullam, accusantium ipsam quam magnam a iure repudiandae dolore quaerat quia vel ipsa neque vitae natus, maxime voluptates eius?</h5>
+    </div>
+        <div class="Sac">
+            <div class="contato">
+                <h4>Entre em contato conosco pela nossa central de atendimento </h4>
+                <p>Funciona de 7h ás 19h de Seg á Sex e 9h á 17h nos Sábados </p>
+                <h4>Ou fale com nosso atendente virtual clicando aqui <a href="#"><i class='bx bx-chat' ></i></a></h4>
+                <p>Ou Siga nossas redes sociais abaixo</p>
+            </div>
+            <div class="tel">
+                <img class="icon1" src="./images/telefone.png" alt="telephone"/>
+                <p>(xx)xxxx-xxxx</p>
+            </div>
+        </div>
+
+        <div class="social">
+           <a href="#"> <img class="icon" src="./images/whatsapp.png" alt="whatsapp"/> </a>
+           <a href="#"> <img class="icon" src="./images/facebook.png" alt="facebook"/> </a>
+           <a href="#"> <img class="icon" src="./images/instagram.png" alt="instagram"/> </a>
+           <a href="#"> <img class="icon" src="./images/twitter.png" alt="twitter"/> </a>
+           <a href="#"> <img class="icon" src="./images/linkedin.png" alt="linkedin"/></a>
+        </div>
+        <div class="footer">
+            <p class="footer"><STRONG></STRONG>COOPPHIR &#169</STRONG></p>
+        </div>
+ 
+</section>
+  <script>
+
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+
+  searchBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+   }
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Coopphir | Products</title>
+    <link rel="icon" href="images/icon.png" type="image/gif">
+    <link rel="stylesheet" href="./css/Produtostyle.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <a href="http://127.0.0.1:5500/Home.html">
+        <img class="icon" src="images/logo.png" alt="logo">
+      </a>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Procurar...">
+         <span class="tooltip">Procurar</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Minha conta</span>
+       </a>
+       <span class="tooltip">Minha conta</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Mensagens</span>
+       </a>
+       <span class="tooltip">Mensagens</span>
+     </li>
+     <li>
+       <a href="http://127.0.0.1:5500/Carrinho.html">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Carrinho</span>
+       </a>
+       <span class="tooltip">Carrinho</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Lista de desejos</span>
+       </a>
+       <span class="tooltip">Lista de desejos</span>
+     </li>
+     <li>
+        <a href="http://127.0.0.1:5500/Duvidas.html">
+          <i class='bx bx-question-mark'></i>
+          <span class="links_name">Dúvidas</span>
+        </a>
+        <span class="tooltip">Dúvidas</span>
+      </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="images/perfil.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Nome Usuário</div>
+             <div class="type">Comprador</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      
+    <div class="categorias">
+      <h2 class="titulo">Produtos</h2>
+    </div>
+    
+    
+      <div class="categoria">
+              <div class="produto">
+                <img class="img-produto" src="images/tomate-longa-vida1-e12545f3c4985942a915417674167711-640-0.png" alt="tomate"/>
+      </div>
+      
+      <div class="description">
+        <div class="product-heading">
+          <h2>Nome do Produto</h2>
+        </div>
+        
+        <div class="product-detail-side"> <span><del>R$ 0,00  Kg</del></span><span class="new-price"> <strong>R$ 0,00 Kg</strong></span> </div>
+        <div class="detail-contant">
+          <p>Detalhes do produto.<br>
+            <span class="stock">Quantidade em estoque</span> </p>
+            <form class="cart" method="post" action="it_cart.html">
+              <div class="quantity">
+                <input step="1" min="1" max="30" name="quantity" value="1"  class="input-count"  type="number">
+              </div>
+              <div class="buttons">
+                <button class="add-btn" type="submit" class="btn sqaure_bt">Adicionar ao carrinho</button>
+                <button class="carrinho-btn">
+                  <i class='bx bx-heart' style='color:#ffffff' ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- As estrelas não estão aaprecendo por algum motivo -->
+         <!-- <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star-o" aria-hidden="true"></i>  -->
+        <section class="home-section">
+    <div class="comments">
+      <div id="description" class="">
+          <p class="escreva">Descrição</p>
+          <input placeholder="Descrição aqui" class="input-text" type="text" name="Nome"  /> 
+      </div>
+      <div id="reviews" class="tab-pane fade">
+          <p  class="escreva">Comentários</p>
+          <input placeholder="Comentários aqui" class="input-text" type="text" name="Nome" /> 
+        </div>
+    </div>
+  </section>
+  
+  <script>
+
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+
+  searchBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+   }
+  }
+  </script>
+</body>
+</html>

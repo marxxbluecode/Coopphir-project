@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Coopphir | Carrinho</title>
+    <link rel="icon" href="images/icon.png" type="image/gif">
+    <link rel="stylesheet" href="./css/Carrinhostyle.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <a href="http://127.0.0.1:5500/Home.html">
+          <img class="icon" src="images/logo.png" alt="">
+        </a>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Procurar...">
+         <span class="tooltip">Procurar</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Minha conta</span>
+       </a>
+       <span class="tooltip">Minha conta</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Mensagens</span>
+       </a>
+       <span class="tooltip">Mensagens</span>
+     </li>
+     <li>
+       <a href="http://127.0.0.1:5500/Carrinho.html">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Carrinho</span>
+       </a>
+       <span class="tooltip">Carrinho</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Lista de desejos</span>
+       </a>
+       <span class="tooltip">Lista de desejos</span>
+     </li>
+     <li>
+        <a href="http://127.0.0.1:5500/Duvidas.html">
+          <i class='bx bx-question-mark'></i>
+          <span class="links_name">Dúvidas</span>
+        </a>
+        <span class="tooltip">Dúvidas</span>
+      </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="images/perfil.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Nome Usuário</div>
+             <div class="type">Comprador</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+
+            <div class="container">
+
+              <div class="product-info">
+                <div class="produto">
+                  <a href="http://127.0.0.1:5500/Produto.html">
+                  <img class="img-produto" src="images/tomate-longa-vida1-e12545f3c4985942a915417674167711-640-0.png" alt="tomate"/>
+                  <h3 class="media-produto">Produto</h3></a>
+                  <p class="media-sub-produto">Status: In stock</p>
+                </div>
+                <div class="product-buy">
+                  <div class="produto">
+                    <input type="number" >
+                    <p class="price_table">$25.00</p>
+                    <p class="price_table">$25.00</p>
+                    <input name="coupon_code" class="input-text" id="coupon_code" placeholder="Coupon code" type="text">
+                    <button type="button" class="btn2">Remove </button>
+                    <button type="button" class="btn2">Apply Coupon</buton>
+                  </div>
+                </div>
+              </div>
+            
+                  <div class="compras">
+                    <div class="shoppingcart">
+                      
+                      <div class="title">
+                        <h3>Cart Totals</h3>
+                          <div class="head-table">
+                            <h4>Estimated shipping</h4>
+                             <h4>Subtotal</h4>
+                             <h4>Total</h4>
+                           </div>
+                      </div>
+                      
+                      <div class="prices">
+                        <i class='bx bx-cart-alt' style='color:#000000'></i>
+                        <h4 class="price">$50.00</h4>
+                        <h4 class="price">$5.00</h4>
+                        <h4 class="price">$55.00</h4>
+                        <h4 class="price">$55.00</h4>
+                        <div class="buttons">
+                          <button class="btn1" type="button" class="button">Keep Shopping</button>
+                          <button class="btn" type="button" class="button">Purchase</button>
+                        </div>
+                      </div>
+                    </div>   
+                  </div>
+                  
+                </section>
+  <script>
+
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+
+  searchBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+   }
+  }
+  </script>
+</body>
+</html>
