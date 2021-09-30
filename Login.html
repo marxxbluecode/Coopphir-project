@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Coopphir | Dúvidas</title>
+    <link rel="icon" href="images/icon.png" type="image/gif">
+    <link rel="stylesheet" href="./css/Loginstyle.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <a href="http://127.0.0.1:5500/Home.html">
+          <img class="icon" src="images/logo.png" alt="">
+        </a>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Procurar...">
+         <span class="tooltip">Procurar</span>
+      </li>
+      <li>
+       <a href="http://127.0.0.1:5500/Login.html#paralogin">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Minha conta</span>
+       </a>
+       <span class="tooltip">Minha conta</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Mensagens</span>
+       </a>
+       <span class="tooltip">Mensagens</span>
+     </li>
+     <li>
+       <a href="http://127.0.0.1:5500/Carrinho.html">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Carrinho</span>
+       </a>
+       <span class="tooltip">Carrinho</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Lista de desejos</span>
+       </a>
+       <span class="tooltip">Lista de desejos</span>
+     </li>
+     <li>
+        <a href="http://127.0.0.1:5500/Duvidas.html">
+          <i class='bx bx-question-mark'></i>
+          <span class="links_name">Dúvidas</span>
+        </a>
+        <span class="tooltip">Dúvidas</span>
+      </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="images/perfil.png" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Nome Usuário</div>
+             <div class="type">Comprador</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+    <section class="home-section">
+
+        <div class="container" >
+            <a class="links" id="paracadastro"></a>
+            <a class="links" id="paralogin"></a>
+            
+            <div class="content">      
+              <!--FORMULÁRIO DE LOGIN-->
+              <div id="login">
+                <form method="post" action=""> 
+                  <h1>Login</h1> 
+                  <p> 
+                    <label for="email_login">Seu e-mail</label>
+                    <input class="input-login" id="email_login" name="email_login" required="required" type="text" />
+                  </p>
+                  
+                  <p> 
+                    <label for="senha_login">Sua senha</label>
+                    <div class="box-eye">
+                      <input class="input-login" id="inputsenha" name="senha_login" required="required" type="password"/> 
+                      <i class='bx bxs-show olho' id="olho"></i>
+                    </div>
+                  </p>
+                  
+                  <p> 
+                    <input class="input-login" type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
+                    <label for="manterlogado">Manter-me logado</label>
+                  </p>
+                  
+                  <p> 
+                    <input class="input-login" type="submit" value="Logar" /> 
+                  </p>
+                  
+                  <p class="link">
+                    Ainda não tem conta?
+                    <a href="#paracadastro">Cadastre-se</a>
+                  </p>
+                </form>
+              </div>
+        
+              <!--FORMULÁRIO DE CADASTRO-->
+              <div id="cadastro">
+                <form method="post" action=""> 
+                  <h1>Cadastro</h1> 
+                  
+                  <p> 
+                    <label for="nome_cad">Seu nome</label>
+                    <input class="input-login" id="nome_cad" name="nome_cad" required="required" type="text" />
+                  </p>
+                  
+                  <p> 
+                    <label for="email_cad">Seu e-mail</label>
+                    <input class="input-login" id="email_cad" name="email_cad" required="required" type="email" /> 
+                  </p>
+                  
+                  <p> 
+                    <label for="senha_cad">Sua senha</label>
+                    <input class="input-login" id="inputsenha" name="senha_cad" required="required" type="password" ="1234"/>
+                  </p>
+                  
+                  <p> 
+                    <input class="input-login" type="submit" value="Cadastrar"/> 
+                  </p>
+                  
+                  <p class="link">  
+                    Já tem conta?
+                    <a href="#paralogin"> Ir para Login </a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div> 
+ 
+    </section>
+  <script>
+
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+
+  searchBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+   }
+  }
+  let btn = document.querySelector('#olho');
+  btn.addEventListener('click', function() {
+      let input = document.querySelector('#inputsenha');
+      if(input.getAttribute('type') == 'password') {
+          input.setAttribute('type', 'text');
+          btn.classList.remove('bxs-show');
+          btn.classList.add('bxs-hide');
+      } else {
+          input.setAttribute('type', 'password');
+          btn.classList.remove('bxs-hide');
+          btn.classList.add('bxs-show');
+      }
+  });
+  
+  </script>
+</body>
+</html>
